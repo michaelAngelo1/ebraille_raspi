@@ -1,0 +1,15 @@
+def callHelp():
+    ws = websocket.create_connection("ws://192.168.137.254:3001/&UID=1")
+    print("1")
+    # print(ws.recv())
+    print("2")
+    message = {"UID_TARGET":"ADMIN", "Message":"help"}
+    str_message = str(message)
+    print(str_message)
+    print(type(str_message))
+    output_string = str_message.replace("'", '"')
+    ws.send(output_string)
+    print("3")
+    # print(ws.recv())
+    print("4")
+    ws.close()
